@@ -1457,3 +1457,78 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+/* Preserve the natural proportions of content images at every screen size. */
+.about img,
+.portfolio .portfolio-item > img {
+  max-width: 100%;
+  height: auto;
+}
+/* Services media */
+.services .services-media {
+  max-width: 808px;
+  margin: 48px auto 0;
+}
+
+.services .media-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.services .media-card {
+  min-width: 0;
+  padding: 16px;
+  border: 1px solid #e3e9ef;
+  border-radius: 16px;
+  background: var(--surface-color);
+  box-shadow: 0 4px 20px rgba(69, 80, 91, 0.06);
+}
+
+.services .media-card h3 {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 0 16px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.services .media-card h3 i {
+  color: var(--accent-color);
+  font-size: 22px;
+}
+
+.services .media-frame {
+  overflow: hidden;
+  border-radius: 10px;
+  background: #000;
+}
+
+.services .media-frame video {
+  object-fit: contain;
+}
+
+.services .media-audio {
+  margin-top: 24px;
+  background: #f7f9fc;
+}
+
+.services .media-audio audio {
+  display: block;
+  width: 100%;
+}
+
+.services .media-card :is(video, iframe, audio):focus-visible {
+  outline: 3px solid var(--accent-color);
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .services .services-media {
+    max-width: 394px;
+  }
+
+  .services .media-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
+}
